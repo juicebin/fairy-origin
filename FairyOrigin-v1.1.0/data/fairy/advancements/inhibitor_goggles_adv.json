@@ -1,0 +1,13 @@
+{
+	"criteria": {
+		"inhibitorGogglesUnlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "fairy:inhibitor_goggles"
+			}
+		}
+	},
+	"rewards": {
+		"function": "fairy:get_inhibitor_goggles"
+	}
+}

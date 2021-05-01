@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"origins:vegetarian",
+		"origins:light_armor",
+		"origins:acrobatics",
+		"fairy:heal",
+		"fairy:tiny",
+		"fairy:better-flight",
+		"fairy:float-up",
+		"fairy:pacifist",
+		"fairy:light_dependent",
+		"fairy:holding_jump",
+		"fairy:colorful"
+	],
+	"icon": {
+		"item": "minecraft:oxeye_daisy",
+		"tag": "{CustomModelData:9947}"
+	},
+	"impact": 2,
+	"name": "Fairy",
+	"description": "Born from the Magic Forest, as a Fairy you are one with nature."
+}

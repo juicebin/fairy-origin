@@ -1,0 +1,52 @@
+{
+	"type": "origins:multiple",
+	"name": "Gift of Nature",
+	"description": "You can heal yourself! However if you're at full health, you heal your damaged friends within a range of four blocks. The healing process takes about three seconds, so you are unable to move whilst being healed!",
+	"heal_self": {
+		"type": "origins:active_self",
+		"cooldown": 400,
+		"condition": {
+			"type": "origins:relative_health",
+			"comparison": "<",
+			"compare_to": 1.0
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function fairy:heal_self",
+			"permission_level": 2
+		},
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+			"bar_index": 9
+		}
+	},
+	"heal_others": {
+		"type": "origins:active_self",
+		"cooldown": 400,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute as @s if entity @e[type=sheep,distance=1..10]",
+					"comparison": ">=",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:relative_health",
+					"comparison": ">=",
+					"compare_to": 1.0
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function fairy:heal_target",
+			"permission_level": 2
+		},
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+			"bar_index": 9
+		}
+	}
+}

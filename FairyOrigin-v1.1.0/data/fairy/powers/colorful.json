@@ -1,0 +1,69 @@
+{
+	"type": "origins:multiple",
+	"name": "Radiant Prosperity",
+	"description": "Your current health is visualized through your vibrant colors!",
+	"green": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:relative_health",
+			"comparison": ">=",
+			"compare_to": 1.0
+		},
+		"red": 0.0,
+		"green": 1.0,
+		"blue": 0.0
+	},
+	"yellow": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:relative_health",
+					"comparison": "<",
+					"compare_to": 1.0
+				},
+				{
+					"type": "origins:relative_health",
+					"comparison": ">=",
+					"compare_to": 0.6
+				}
+			]
+		},
+		"red": 1.0,
+		"green": 1.0,
+		"blue": 0.0
+	},
+	"orange": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:relative_health",
+					"comparison": "<",
+					"compare_to": 0.6
+				},
+				{
+					"type": "origins:relative_health",
+					"comparison": ">",
+					"compare_to": 0.3
+				}
+			]
+		},
+		"red": 1.0,
+		"green": 0.6,
+		"blue": 0.0
+	},
+	"red": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:relative_health",
+			"comparison": "<=",
+			"compare_to": 0.3
+		},
+		"red": 1.0,
+		"green": 0.0,
+		"blue": 0.0
+	}
+}

@@ -1,0 +1,157 @@
+{
+	"type": "origins:multiple",
+	"name": "Light Dependent",
+	"description": "You're dependent on light. The lower the light level, the weaker you are.",
+	"normal_health": {
+		"type": "origins:conditioned_attribute",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:light_level",
+				"comparison": ">=",
+				"compare_to": 11.0
+			}
+		},
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"value": -8.0,
+			"operation": "addition"
+		}
+	},
+	"minus_health_one": {
+		"type": "origins:conditioned_attribute",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:light_level",
+						"comparison": "<",
+						"compare_to": 11.0
+					},
+					{
+						"type": "origins:light_level",
+						"comparison": ">",
+						"compare_to": 7.0
+					}
+				]
+			}
+		},
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"value": -10.0,
+			"operation": "addition"
+		}
+	},
+	"minus_health_two": {
+		"type": "origins:conditioned_attribute",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:light_level",
+						"comparison": "<=",
+						"compare_to": 7.0
+					},
+					{
+						"type": "origins:light_level",
+						"comparison": ">",
+						"compare_to": 3.0
+					}
+				]
+			}
+		},
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"value": -12.0,
+			"operation": "addition"
+		}
+	},
+	"minus_health_three": {
+		"type": "origins:conditioned_attribute",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:light_level",
+				"comparison": "<=",
+				"compare_to": 3.0
+			}
+		},
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"value": -14.0,
+			"operation": "addition"
+		}
+	},
+	"normal_alpha": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:light_level",
+				"comparison": ">=",
+				"compare_to": 11.0
+			}
+		},
+		"alpha": 1.0
+	},
+	"minus_alpha_one": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:light_level",
+						"comparison": "<",
+						"compare_to": 11.0
+					},
+					{
+						"type": "origins:light_level",
+						"comparison": ">",
+						"compare_to": 7.0
+					}
+				]
+			}
+		},
+		"alpha": 0.8
+	},
+	"minus_alpha_two": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:light_level",
+						"comparison": "<=",
+						"compare_to": 7.0
+					},
+					{
+						"type": "origins:light_level",
+						"comparison": ">",
+						"compare_to": 3.0
+					}
+				]
+			}
+		},
+		"alpha": 0.6
+	},
+	"minus_alpha_three": {
+		"type": "origins:model_color",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:light_level",
+				"comparison": "<=",
+				"compare_to": 3.0
+			}
+		},
+		"alpha": 0.4
+	}
+}

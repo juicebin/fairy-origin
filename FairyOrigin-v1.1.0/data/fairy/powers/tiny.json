@@ -1,0 +1,22 @@
+{
+	"type": "origins:multiple",
+	"name": "Pixie",
+	"description": "You're much smaller than a human, yet you're more nimble!",
+	"faster": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"value": 0.1,
+			"operation": "addition"
+		}
+	},
+	"particle": {
+		"type": "origins:particle",
+		"particle": "illuminations:chorus_petal",
+		"frequency": 5
+	},
+	"size": {
+		"type": "extraorigins:modify_size",
+		"scale": 0.3
+	}
+}

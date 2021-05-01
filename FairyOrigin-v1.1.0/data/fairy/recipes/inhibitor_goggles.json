@@ -1,0 +1,24 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"gdg",
+		"#l#"
+	],
+	"key": {
+		"g": {
+			"item": "minecraft:glowstone_dust"
+		},
+		"d": {
+			"item": "minecraft:gold_ingot"
+		},
+		"#": {
+			"item": "minecraft:glass_pane"
+		},
+		"l": {
+			"item": "minecraft:leather"
+		}
+	},
+	"result": {
+		"item": "minecraft:knowledge_book"
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"type": "origins:active_self",
+	"hidden": true,
+	"cooldown": 0,
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:swimming",
+				"inverted": true
+			},
+			{
+				"type": "origins:on_block",
+				"inverted": true
+			},
+			{
+				"type": "origins:sneaking",
+				"inverted": true
+			}
+		]
+	},
+	"key": {
+		"key": "key.jump",
+		"continuous": true
+	},
+	"hud_render": {
+		"should_render": false
+	},
+	"entity_action": {
+		"type": "origins:change_resource",
+		"resource": "fairy:holding_jump",
+		"change": 1
+	}
+}

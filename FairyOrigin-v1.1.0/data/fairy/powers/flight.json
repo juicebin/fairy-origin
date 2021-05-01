@@ -1,0 +1,35 @@
+{
+	"type": "origins:multiple",
+	"name": "Simulated Flight",
+	"description": "With the combined powers of potion effects and wings, you can effectively fly.",
+	"wings": {
+		"type": "origins:elytra_flight",
+		"render_elytra": true
+	},
+	"effects": {
+		"type": "origins:action_over_time",
+		"interval": 9,
+		"condition": {
+			"type": "origins:fall_flying",
+			"inverted": true
+		},
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effects": [
+				{
+					"effect": "minecraft:slow_falling",
+					"duration": 10,
+					"show_particles": false,
+					"show_icon": false
+				},
+				{
+					"effect": "minecraft:jump_boost",
+					"duration": 10,
+					"amplifier": 1,
+					"show_particles": false,
+					"show_icon": false
+				}
+			]
+		}
+	}
+}

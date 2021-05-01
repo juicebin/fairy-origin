@@ -1,0 +1,122 @@
+{
+	"type": "origins:multiple",
+	"name": "Flight",
+	"description": "An effective improvement of simulated Creative flight.",
+	"fly": {
+		"type": "origins:swimming",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": ">",
+					"compare_to": 0.0,
+					"inverted": true
+				}
+			]
+		}
+	},
+	"stopsound": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function fairy:stop_underwater_sounds",
+			"permission_level": 4
+		}
+	},
+	"float": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:swimming",
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type":"origins:resource",
+				"resource": "fairy:holding_jump",
+				"comparison": "<=",
+				"compare_to": 0
+			},
+			"if_action": {
+				"type": "origins:apply_effect",
+				"effect": {
+					"effect": "minecraft:levitation",
+					"duration": 3,
+					"amplifier": 255,
+					"show_particles": false,
+					"show_icon": false
+				}
+			},
+			"else_action": {
+				"type": "origins:apply_effect",
+				"effect": {
+					"effect": "minecraft:levitation",
+					"duration": 5,
+					"amplifier": 2,
+					"show_particles": false,
+					"show_icon": false
+				}
+			}
+		}
+	},
+	"decrease-resource": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "fairy:holding_jump",
+			"change": -1
+		}
+	},
+	"float-down": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:swimming",
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:sneaking"
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:slow_falling",
+				"duration": 3,
+				"amplifier": 0,
+				"show_particles": false,
+				"show_icon": false
+			}
+		}
+	},
+	"elytra": {
+		"type": "origins:elytra_flight",
+		"render_elytra": true
+	}
+}
